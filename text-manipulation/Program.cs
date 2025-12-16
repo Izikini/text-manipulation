@@ -2,5 +2,7 @@
 
 Console.WriteLine("Podaj zdanie :");
 string sentence = Console.ReadLine();
-sentence = sentence.Replace(" ", "_");
+Console.WriteLine("Podaj znak za ktory chcesz zamiec spacje");
+string znak = Console.ReadLine();
+sentence = sentence.Replace(" ", znak);
 Console.WriteLine("Zdanie po zmianie spacji: "+sentence);
