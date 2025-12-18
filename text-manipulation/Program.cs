@@ -1,14 +1,11 @@
-﻿//Zadanie 3
+﻿//zadanie 5
+using System.Globalization;
 
-Console.WriteLine("Podaj zdanie :");
-string sentence = Console.ReadLine();
-Console.WriteLine("Podaj znak za ktory chcesz zamiec spacje");
-string znak = Console.ReadLine();
-Console.WriteLine("Podaj znak ktory chcesz zamienic w zdaniu");
-string znak2 = Console.ReadLine();
-Console.WriteLine("Podaj znak ktory chcesz zamienic w zdaniu");
-string znak3 = Console.ReadLine();
-sentence = sentence.Replace(" ", znak);
-Console.WriteLine("Zdanie po zmianie spacji: "+sentence);
-sentence = sentence.Replace(znak3, znak2);
-Console.WriteLine("Zdanie po zamianie znaku: "+sentence);
+Console.WriteLine("Podaj teks:");
+string tekst= Console.ReadLine();
+
+for(int i = tekst.Length-1 ;i >=0 ;i--) {
+
+    Console.Write(tekst[i]);
+
+}
