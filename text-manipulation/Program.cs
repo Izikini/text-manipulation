@@ -5,8 +5,14 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 
-Console.WriteLine("Podaj mail:");
-string tekst  = Console.ReadLine();
-int index = tekst.IndexOf('@');
-string domena = tekst.Substring(index + 1);
-Console.WriteLine("Domena to: " + domena);
+Console.WriteLine("Podaj zdanie:");
+string tekst = Console.ReadLine();
+Console.WriteLine("Podaj zakazane slowo:");
+string zakazane_slowo = Console.ReadLine().ToLower();
+
+
+if (tekst.ToLower().Contains(zakazane_slowo))
+{
+    tekst = tekst.Replace(zakazane_slowo, "***", StringComparison.OrdinalIgnoreCase);
+    Console.WriteLine("Nowy tekst: " + tekst);
+}
