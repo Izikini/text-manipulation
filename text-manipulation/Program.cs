@@ -6,12 +6,19 @@ using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 
 Console.WriteLine("Podaj teks:");
-string tekst = Console.ReadLine();
-string[] tekst_words = tekst.Split(' ');
-int ilosc_slow = 0;
-for (int i = 0; i < tekst_words.Length; i++)
+string[] tekst = Console.ReadLine().Split(' ');
+string skrot = "";
+foreach (string word in tekst)
 {
-    tekst_words[i].Trim();
-    ilosc_slow++;
+    word.Trim();
+    if(word == "of")
+    {
+        word.Replace("of", "");
+    }
+    else
+    {
+        skrot = skrot + word[0];
+    }
+
 }
-Console.WriteLine("Ilosc slow w tekscie: " + ilosc_slow);
+Console.WriteLine("Skrót to: " + skrot.ToUpper());
