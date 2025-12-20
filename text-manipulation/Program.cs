@@ -2,23 +2,16 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 
 Console.WriteLine("Podaj teks:");
-string tekst = Console.ReadLine().ToLower().Replace(" ","");
-
-string naodwrot = "";
-
-for (int i = tekst.Length - 1; i >= 0; i--)
+string tekst = Console.ReadLine();
+string[] tekst_words = tekst.Split(' ');
+int ilosc_slow = 0;
+for (int i = 0; i < tekst_words.Length; i++)
 {
-    naodwrot += tekst[i];
+    tekst_words[i].Trim();
+    ilosc_slow++;
 }
-
-if (tekst == naodwrot)
-{
-    Console.WriteLine("Tekst jest palindromem");
-}
-else
-{
-    Console.WriteLine("Tekst nie jest palindromem");
-}
+Console.WriteLine("Ilosc slow w tekscie: " + ilosc_slow);
