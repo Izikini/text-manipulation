@@ -5,20 +5,8 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 
-Console.WriteLine("Podaj teks:");
-string[] tekst = Console.ReadLine().Split(' ');
-string skrot = "";
-foreach (string word in tekst)
-{
-    word.Trim();
-    if(word == "of")
-    {
-        word.Replace("of", "");
-    }
-    else
-    {
-        skrot = skrot + word[0];
-    }
-
-}
-Console.WriteLine("Skrót to: " + skrot.ToUpper());
+Console.WriteLine("Podaj mail:");
+string tekst  = Console.ReadLine();
+int index = tekst.IndexOf('@');
+string domena = tekst.Substring(index + 1);
+Console.WriteLine("Domena to: " + domena);
