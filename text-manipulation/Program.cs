@@ -7,12 +7,15 @@ using System.Runtime.ExceptionServices;
 
 Console.WriteLine("Podaj zdanie:");
 string tekst = Console.ReadLine();
-Console.WriteLine("Podaj zakazane slowo:");
-string zakazane_slowo = Console.ReadLine().ToLower();
-
-
-if (tekst.ToLower().Contains(zakazane_slowo))
+Console.WriteLine("Podaj slowa zakazane. Oddziel je pojedyncza spacja.:");
+string[] zakazane_slowa = Console.ReadLine().Split(' ');
+string nowy_tekst = tekst;
+foreach (string zakazane in zakazane_slowa)
 {
-    tekst = tekst.Replace(zakazane_slowo, "***", StringComparison.OrdinalIgnoreCase);
-    Console.WriteLine("Nowy tekst: " + tekst);
+    if (nowy_tekst.ToLower().Contains(zakazane))
+    {
+        nowy_tekst = nowy_tekst.Replace(zakazane, "***", StringComparison.OrdinalIgnoreCase);
+
+    }
 }
+Console.WriteLine("Tekst po cenzurze:" + nowy_tekst);
