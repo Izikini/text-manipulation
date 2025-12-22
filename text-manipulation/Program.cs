@@ -170,6 +170,21 @@ class Program
         }
         Console.WriteLine("Tekst po zamianie liczb słownie na cyfry: " + tekst);
     }
+    static void zadanie12()
+    {
+        Console.WriteLine("Wpisz tu tekst lub artykul");
+        string tekst = Console.ReadLine();
+        Console.WriteLine("Podaj slowo ktorego index potrzebujesz");
+        string slowo = Console.ReadLine();
+        if (tekst.Contains(slowo))
+        {
+            Console.WriteLine(tekst.IndexOf(slowo));
+        }
+        else
+        {
+            Console.WriteLine("Slowo nie istnieje w tym tekscie");
+        }
+    }
     static void Main(string[] args)
     {
         //zadanie1();
@@ -181,6 +196,6 @@ class Program
         //zadanie7();
         //zadanie8();
         //zadanie9();
-        zadanie11();
+        zadanie12();
     }
 }
