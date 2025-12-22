@@ -182,8 +182,23 @@ class Program
         }
         else
         {
-            Console.WriteLine("Slowo nie istnieje w tym tekscie");
+            Console.Write("Slowo nie istnieje w tym tekscie");
         }
+    }
+    static void zadanie13()
+    {
+        Console.WriteLine("Podaj imie i nazwisko");
+        string tekst = Console.ReadLine();
+        tekst = tekst.Trim();
+        string[] imie_nazwisko = tekst.Split(' ');
+        string imie = imie_nazwisko[0];
+        string nazwisko = imie_nazwisko[1];
+        string imiePoprawne = char.ToUpper(imie[0]) + (imie.Substring(1).ToLower());
+        string nazwiskoPoprawne = char.ToUpper(nazwisko[0]) + (nazwisko.Substring(1).ToLower());
+        imie_nazwisko[0] = imiePoprawne;
+        imie_nazwisko[1] = nazwiskoPoprawne;
+        Console.WriteLine($"Poprawiona wersja to:{imie_nazwisko[0]} {imie_nazwisko[1]} ");
+       
     }
     static void Main(string[] args)
     {
@@ -196,6 +211,6 @@ class Program
         //zadanie7();
         //zadanie8();
         //zadanie9();
-        zadanie12();
+        zadanie13();
     }
 }
