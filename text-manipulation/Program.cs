@@ -219,6 +219,14 @@ class Program
         }
         Console.WriteLine(sponge_tekst);
     }
+    public static void zadanie15() {
+        Console.WriteLine("Podaj zdanie do odwrocenia");
+        string tekst = Console.ReadLine();
+        string[] slowa = tekst.Split(' ');
+        for (int i = slowa.Length - 1; i >= 0; i--) {
+            Console.Write(slowa[i]+ " ");
+        }
+    }
     static void Main(string[] args)
     {
         //zadanie1();
@@ -230,6 +238,6 @@ class Program
         //zadanie7();
         //zadanie8();
         //zadanie9();
-        zadanie14();
+        zadanie15();
     }
 }
