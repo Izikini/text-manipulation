@@ -200,6 +200,25 @@ class Program
         Console.WriteLine($"Poprawiona wersja to:{imie_nazwisko[0]} {imie_nazwisko[1]} ");
        
     }
+    static void zadanie14()
+    {
+        Console.WriteLine("Podaj tekst");
+        string tekst = Console.ReadLine();
+        string sponge_tekst = "";
+        for (int i = 0; i < tekst.Length; i++)
+        {
+            if (i % 2 == 0)
+            {
+                sponge_tekst += tekst[i].ToString().ToLower();
+            }
+            else if (i % 2 == 1)
+            {
+                sponge_tekst += tekst[i].ToString().ToUpper();
+            }
+
+        }
+        Console.WriteLine(sponge_tekst);
+    }
     static void Main(string[] args)
     {
         //zadanie1();
@@ -211,6 +230,6 @@ class Program
         //zadanie7();
         //zadanie8();
         //zadanie9();
-        zadanie13();
+        zadanie14();
     }
 }
