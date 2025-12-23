@@ -227,6 +227,30 @@ class Program
             Console.Write(slowa[i]+ " ");
         }
     }
+    public static void zadanie16()
+    {
+        Console.WriteLine("Podaj Imie,Nazwisko,Wiek. Musi to być w formacie - 'imie,nazwisko,wiek':");
+        string tekst = Console.ReadLine();
+        string[] dane = tekst.Split(',');
+        if (!tekst.Contains(","))
+        {
+            Console.WriteLine("Zapomniales o ','");
+            return;
+        }
+        else if (!int.TryParse(dane[2], out int wiek)) {
+            Console.WriteLine("Musisz podac wiek liczba "); return;
+        }
+        else
+        {
+            string imie = dane[0].Trim();
+            string nazwisko = dane[1].Trim();
+            wiek = int.Parse(dane[2].Trim());
+            Console.WriteLine($"Imie: {imie}");
+            Console.WriteLine($"Nazwisko: {nazwisko}");
+            Console.WriteLine($"Wiek: {wiek}");
+        }
+
+    }
     static void Main(string[] args)
     {
         //zadanie1();
@@ -238,6 +262,6 @@ class Program
         //zadanie7();
         //zadanie8();
         //zadanie9();
-        zadanie15();
+        zadanie16();
     }
 }
