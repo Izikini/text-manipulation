@@ -249,7 +249,28 @@ class Program
             Console.WriteLine($"Nazwisko: {nazwisko}");
             Console.WriteLine($"Wiek: {wiek}");
         }
+    }
+    public static void zadanie17()
+    {
+        Console.WriteLine("Podaj tekst do dzielenia na spogloski i samogloski:");
+        string tekst = Console.ReadLine();
+        string samogloski = "aeiouyAEIOUY";
+        int liczba_samoglosek = 0;
+        int liczba_spolglosek = 0;
 
+        foreach (char c in tekst)
+        {
+            if (!char.IsLetter(c))
+                continue;
+
+            if (samogloski.Contains(c))
+                liczba_samoglosek++;
+            else
+                liczba_spolglosek++;
+        }
+
+        Console.WriteLine($"Liczba samoglosek: {liczba_samoglosek}");
+        Console.WriteLine($"Liczba spółgłosek: {liczba_spolglosek}");
     }
     static void Main(string[] args)
     {
@@ -262,6 +283,6 @@ class Program
         //zadanie7();
         //zadanie8();
         //zadanie9();
-        zadanie16();
+        zadanie17();
     }
 }
